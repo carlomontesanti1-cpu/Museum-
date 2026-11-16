@@ -53,6 +53,8 @@ def build(lang):
         names.append(name)
     open(os.path.join(out, 'CNAME'), 'w').write(s['host'] + '\n')
     open(os.path.join(out, '.nojekyll'), 'w').write('')
+    # for classic hosting (Apache, FTP upload); ignored by GitHub Pages
+    open(os.path.join(out, '.htaccess'), 'w').write('ErrorDocument 404 /404.html\nDirectoryIndex index.html\n')
     open(os.path.join(out, 'robots.txt'), 'w').write(f'User-agent: *\nAllow: /\nSitemap: {s["domain"]}/sitemap.xml\n')
     urls = ''.join(f'  <url><loc>{page_url(lang, n)}</loc></url>\n' for n in names)
     open(os.path.join(out, 'sitemap.xml'), 'w').write(
