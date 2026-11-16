@@ -39,6 +39,19 @@ Owner: Carlo Montesanti, Slow Life Family Farm, Noto (Sicily). Contact: info@mus
 - Real names and stories for the artefacts (board of stones, grain cleaner).
 - Add a privacy/cookie page and an accessibility statement (Italian law).
 - Embed the film (YouTube short 3jM72FhLY-s, or the original file) instead of the cover that links out.
-- Set og:image to a full URL once the domain is known.
 - Get the funding section and the education-only wording approved by the grant office.
-- Choose domain and hosting (e.g. museumofagriculturalcivilization.org) and publish.
+
+## Domain and publishing
+- Domain owned: www.museodellaciviltacontadina.com (Italian site is the default).
+- For now both languages live on this domain: /it/ (Italian, the root redirects here) and /en/ (English).
+- Planned: a separate English domain later. When it exists, publish en/ there, point the IT | EN switch and the hreflang links to the two domains, and update sitemap.xml.
+- Every page has canonical, hreflang (it/en) and og:url/og:image with full URLs. sitemap.xml, robots.txt, 404.html and CNAME are at the root.
+
+### Publish with GitHub Pages (free)
+1. GitHub repo > Settings > Pages > Source: "Deploy from a branch", Branch: main, Folder: / (root). Save.
+2. Custom domain: www.museodellaciviltacontadina.com (the CNAME file already sets it). Tick "Enforce HTTPS" once it is available.
+3. At the domain registrar, DNS records:
+   - CNAME  www  ->  carlomontesanti1-cpu.github.io
+   - A records for the bare domain (@) -> GitHub Pages IPs (check the current list in GitHub docs: "Managing a custom domain for your GitHub Pages site").
+4. Wait for DNS (minutes to a few hours), then check https://www.museodellaciviltacontadina.com
+Note: the repo is public. GitHub Pages on a private repo needs a paid plan; alternatives are Cloudflare Pages or Netlify (free, connect the repo, output folder = root).
