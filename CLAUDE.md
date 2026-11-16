@@ -40,7 +40,7 @@ Owner: Carlo Montesanti, Slow Life Family Farm, Noto (Sicily). Contact: info@mus
 - Replace the pizza photo (appears edited) with a real one.
 - Real names and stories for the artefacts (board of stones, grain cleaner).
 - Privacy/cookie page and accessibility statement are online (en/privacy, en/accessibility, it/privacy, it/accessibilita). Have them checked by a consultant; add the VAT number (P.IVA) of the farm in the footer if required. Update them if cookies, analytics, forms or an embedded YouTube player are added.
-- Embed the film (YouTube short 3jM72FhLY-s, or the original file) instead of the cover that links out.
+- Embed the film (YouTube short OwATUZKdR90, or the original file) instead of the cover that links out.
 - Get the funding section and the education-only wording approved by the grant office.
 
 ## Domain and publishing
