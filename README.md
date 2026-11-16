@@ -23,7 +23,7 @@ Owner: Carlo Montesanti, Slow Life Family Farm, Noto (Sicily). Contact: info@mus
 
 ## Design system
 - Colours: black #0E0E0C, ink #14130F, bone #EDE8DC, light #F5F2EA, gold #C8A45C (deep gold #A8842F on light backgrounds), stone grey #A9A498, text on dark #D2CDC1, text on light #3B3932 / #5E5A50.
-- Fonts (Google Fonts): Cormorant Garamond for titles and names; Jost for body text and small capitals (letter-spacing 0.3–0.4em).
+- Fonts (self-hosted in assets/fonts, no Google Fonts for privacy): Cormorant Garamond for titles and names; Jost for body text and small capitals (letter-spacing 0.3–0.4em).
 - Gold used sparingly: one short rule under titles, the grain in the logo, key links.
 
 ## EU grant (PNRR M1C3, Measure 2, Investment 2.2 – CUP G87B22001070004)
@@ -37,7 +37,7 @@ Owner: Carlo Montesanti, Slow Life Family Farm, Noto (Sicily). Contact: info@mus
 - Confirm address spelling: Contrada Piano Milo (or Miro), Noto.
 - Replace the pizza photo (appears edited) with a real one.
 - Real names and stories for the artefacts (board of stones, grain cleaner).
-- Add a privacy/cookie page and an accessibility statement (Italian law).
+- Privacy/cookie page and accessibility statement are online (en/privacy, en/accessibility, it/privacy, it/accessibilita). Have them checked by a consultant; add the VAT number (P.IVA) of the farm in the footer if required. Update them if cookies, analytics, forms or an embedded YouTube player are added.
 - Embed the film (YouTube short 3jM72FhLY-s, or the original file) instead of the cover that links out.
 - Get the funding section and the education-only wording approved by the grant office.
 
