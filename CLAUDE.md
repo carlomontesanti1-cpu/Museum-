@@ -43,17 +43,13 @@ Owner: Carlo Montesanti, Slow Life Family Farm, Noto (Sicily). Contact: info@mus
 - Embed the film (YouTube short OwATUZKdR90, or the original file) instead of the cover that links out.
 - Get the funding section and the education-only wording approved by the grant office.
 
-## Domain and publishing
-- Italian site: https://www.museodellaciviltacontadina.com – published from `docs/` in this repo (carlomontesanti1-cpu/museum-), GitHub Pages: branch main, folder /docs.
-- English site: https://www.museumofagriculturalcivilization.org – published from the separate repo carlomontesanti1-cpu/museum-en (root of main), which only holds the contents of `build-en/`.
-- The build turns the source links into each domain's links: pages sit at the domain root (/, /mulino-ad-acqua.html, /water-mill.html …), the IT | EN switch and hreflang point across the two domains, and each site gets its own CNAME, sitemap.xml, robots.txt and 404.html.
+## Domain and publishing (live since November 2026)
+- Italian site: https://www.museodellaciviltacontadina.com – hosted on a Hestia control panel (fibersix.it, server IP 103.230.140.4). Files go in web/museodellaciviltacontadina.com/public_html via the panel's File Manager ("Gestore File").
+- English site: https://www.museumofagriculturalcivilization.org – domain and hosting at Hostinger (hPanel). Files go in public_html via Websites > Dashboard > File Manager.
+- The build (`python3 tools/build.py`) makes `docs/` (Italian) and `build-en/` (English) with pages at the domain root (/, /mulino-ad-acqua.html, /water-mill.html …); the IT | EN switch and hreflang point across the two domains; each site gets its own sitemap.xml, robots.txt, 404.html and .htaccess.
+- The owner uploads by hand from his phone, so after a change send only the changed files of docs/ and build-en/ (clearly labelled Italian / English); send a full zip of each folder only when many files change.
 
 ### After every change
 1. Edit en/ and it/ (both, always), then `python3 tools/build.py`.
 2. Commit the source and docs/ to this repo (branch + pull request).
-3. Copy build-en/ into the museum-en repo (replace everything except .git) and push it.
-
-### DNS at the registrar (same for both domains)
-- CNAME  www  ->  carlomontesanti1-cpu.github.io
-- A records for the bare domain (@): 185.199.108.153, 185.199.109.153, 185.199.110.153, 185.199.111.153 (check GitHub docs "Managing a custom domain for your GitHub Pages site").
-- Then in each repo: Settings > Pages > custom domain, and tick "Enforce HTTPS" once available.
+3. Send the owner the changed files for each host.
