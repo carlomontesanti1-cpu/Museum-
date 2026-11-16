@@ -1,12 +1,14 @@
 # Project: Museum of Agricultural Civilization / Museo della Civiltà Contadina
 
-Static website (plain HTML + one small JS file). No build step. Open any .html file in a browser to preview.
+Static website (plain HTML + one small JS file). Edit the source pages in en/ and it/, preview by opening them in a browser, then run `python3 tools/build.py` to make the two published sites.
 Owner: Carlo Montesanti, Slow Life Family Farm, Noto (Sicily). Contact: info@museumofagriculturalcivilization.org
 
 ## Files
-- `index.html` – redirects to `it/index.html`
-- `en/` – English: index, water-mill, sun-mill, artefacts, laboratory
-- `it/` – Italian: index, mulino-ad-acqua, mulino-del-sole, reperti, laboratorio
+- `index.html` – local preview only, redirects to `it/index.html`
+- `tools/build.py` – builds `docs/` (Italian site) and `build-en/` (English site) from the source. Never edit docs/ or build-en/ by hand.
+- `assets/fonts/` – self-hosted fonts
+- `en/` – English source: index, water-mill, sun-mill, artefacts, laboratory, privacy, accessibility
+- `it/` – Italian source: index, mulino-ad-acqua, mulino-del-sole, reperti, laboratorio, privacy, accessibilita
 - `assets/img/` – all photos, drawings and funder logos (web-sized)
 - `assets/site.js` – before/after swipe sliders (input[data-ba] + [data-ba-pos])
 - Styles are inline on each element; shared CSS (menu, links) is in a <style> block in each page head.
@@ -42,16 +44,16 @@ Owner: Carlo Montesanti, Slow Life Family Farm, Noto (Sicily). Contact: info@mus
 - Get the funding section and the education-only wording approved by the grant office.
 
 ## Domain and publishing
-- Domain owned: www.museodellaciviltacontadina.com (Italian site is the default).
-- For now both languages live on this domain: /it/ (Italian, the root redirects here) and /en/ (English).
-- Planned: a separate English domain later. When it exists, publish en/ there, point the IT | EN switch and the hreflang links to the two domains, and update sitemap.xml.
-- Every page has canonical, hreflang (it/en) and og:url/og:image with full URLs. sitemap.xml, robots.txt, 404.html and CNAME are at the root.
+- Italian site: https://www.museodellaciviltacontadina.com – published from `docs/` in this repo (carlomontesanti1-cpu/museum-), GitHub Pages: branch main, folder /docs.
+- English site: https://www.museumofagriculturalcivilization.org – published from the separate repo carlomontesanti1-cpu/museum-en (root of main), which only holds the contents of `build-en/`.
+- The build turns the source links into each domain's links: pages sit at the domain root (/, /mulino-ad-acqua.html, /water-mill.html …), the IT | EN switch and hreflang point across the two domains, and each site gets its own CNAME, sitemap.xml, robots.txt and 404.html.
 
-### Publish with GitHub Pages (free)
-1. GitHub repo > Settings > Pages > Source: "Deploy from a branch", Branch: main, Folder: / (root). Save.
-2. Custom domain: www.museodellaciviltacontadina.com (the CNAME file already sets it). Tick "Enforce HTTPS" once it is available.
-3. At the domain registrar, DNS records:
-   - CNAME  www  ->  carlomontesanti1-cpu.github.io
-   - A records for the bare domain (@) -> GitHub Pages IPs (check the current list in GitHub docs: "Managing a custom domain for your GitHub Pages site").
-4. Wait for DNS (minutes to a few hours), then check https://www.museodellaciviltacontadina.com
-Note: the repo is public. GitHub Pages on a private repo needs a paid plan; alternatives are Cloudflare Pages or Netlify (free, connect the repo, output folder = root).
+### After every change
+1. Edit en/ and it/ (both, always), then `python3 tools/build.py`.
+2. Commit the source and docs/ to this repo (branch + pull request).
+3. Copy build-en/ into the museum-en repo (replace everything except .git) and push it.
+
+### DNS at the registrar (same for both domains)
+- CNAME  www  ->  carlomontesanti1-cpu.github.io
+- A records for the bare domain (@): 185.199.108.153, 185.199.109.153, 185.199.110.153, 185.199.111.153 (check GitHub docs "Managing a custom domain for your GitHub Pages site").
+- Then in each repo: Settings > Pages > custom domain, and tick "Enforce HTTPS" once available.
