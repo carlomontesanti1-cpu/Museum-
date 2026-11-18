@@ -30,7 +30,8 @@ a:focus-visible{outline:2px solid #C8A45C;outline-offset:3px}
 .nav-m summary::-webkit-details-marker{display:none}
 .nav-m a{min-height:44px;display:flex;align-items:center;justify-content:center;font-size:13px;letter-spacing:.25em}
 @media (max-width:760px){.nav-m{display:none!important}.nav-d{display:grid!important;grid-template-columns:1fr 1fr;width:100%;gap:0 12px!important;font-size:11px!important;letter-spacing:.2em!important;border-top:1px solid rgba(237,232,220,.25);border-bottom:1px solid rgba(237,232,220,.25)}.nav-d a{justify-content:center;text-align:center;line-height:1.3}.nav-d a:last-child:nth-child(odd){grid-column:1/-1}}
-@media (max-width:760px){.hero-img{width:141vw!important;height:auto!important;left:-23vw!important;top:7vw!important;object-fit:fill!important;-webkit-mask-image:linear-gradient(180deg,transparent 0,#000 10%,#000 72%,transparent 100%);mask-image:linear-gradient(180deg,transparent 0,#000 10%,#000 72%,transparent 100%)}}
+@media (max-width:760px){.hero-img{width:141vw!important;height:auto!important;left:-23vw!important;top:calc(7vw + 44px)!important;object-fit:fill!important;-webkit-mask-image:linear-gradient(180deg,transparent 0,#000 10%,#000 72%,transparent 100%);mask-image:linear-gradient(180deg,transparent 0,#000 10%,#000 72%,transparent 100%)}}
+.nav-top{display:none}@media (max-width:760px){.nav-top{display:grid;grid-template-columns:1fr 1fr;gap:0 12px;width:100%;font-size:11px;letter-spacing:.2em;border-bottom:1px solid rgba(237,232,220,.25);margin-bottom:-8px}.nav-top a{min-height:44px;display:flex;align-items:center;justify-content:center;text-align:center;line-height:1.3}.nav-d a:nth-child(-n+2){display:none!important}.nav-d{border-top:0!important}}
 </style>
 </head>
 <body>
@@ -42,6 +43,7 @@ a:focus-visible{outline:2px solid #C8A45C;outline-offset:3px}
 <div style="position: relative; max-width: 1280px; margin: 0 auto; padding: 20px clamp(20px, 4vw, 32px) clamp(36px, 6vw, 88px); min-height: clamp(520px, 60vw, 820px); box-sizing: border-box; display: flex; flex-direction: column; justify-content: space-between; gap: clamp(36px, 7vw, 96px)">
 <header style="display: flex; flex-direction: column; align-items: center; gap: 28px; padding-top: 20px">
 <div style="display: flex; align-items: center; gap: 4px; font-size: 13px; letter-spacing: 0.2em; align-self: flex-end; margin-bottom: -12px"><span aria-current="true" style="min-width: 44px; min-height: 44px; display: flex; align-items: center; justify-content: center; font-weight: 500; color: #EDE8DC; border-bottom: 1px solid #C8A45C">IT</span><span style="color: #A9A498">|</span><a href="https://www.museumofagriculturalcivilization.org/" aria-label="English" style="min-width: 44px; min-height: 44px; display: flex; align-items: center; justify-content: center; color: #D2CDC1">EN</a></div>
+<nav class="nav-top" aria-label="Principale 1"><a href="#watermill">MULINO AD ACQUA · 1700</a><a href="#sunmill">MULINO DEL SOLE · 1956</a></nav>
 <a href="#top" aria-label="Museo della Civiltà Contadina" style="display: flex; flex-direction: column; align-items: center; gap: 26px; text-align: center">
 <svg viewBox="0 0 200 200" width="120" height="120" aria-hidden="true" fill="none" stroke="#EDE8DC" stroke-width="2.5" stroke-linecap="round">
 <circle cx="100" cy="100" r="94"></circle>
