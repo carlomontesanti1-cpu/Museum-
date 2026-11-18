@@ -1,12 +1,14 @@
 # Project: Museum of Agricultural Civilization / Museo della Civiltà Contadina
 
-Static website (plain HTML + one small JS file). No build step. Open any .html file in a browser to preview.
+Static website (plain HTML + one small JS file). Edit the source pages in en/ and it/, preview by opening them in a browser, then run `python3 tools/build.py` to make the two published sites.
 Owner: Carlo Montesanti, Slow Life Family Farm, Noto (Sicily). Contact: info@museumofagriculturalcivilization.org
 
 ## Files
-- `index.html` – redirects to `it/index.html`
-- `en/` – English: index, water-mill, sun-mill, artefacts, laboratory
-- `it/` – Italian: index, mulino-ad-acqua, mulino-del-sole, reperti, laboratorio
+- `index.html` – local preview only, redirects to `it/index.html`
+- `tools/build.py` – builds `docs/` (Italian site) and `build-en/` (English site) from the source. Never edit docs/ or build-en/ by hand.
+- `assets/fonts/` – self-hosted fonts
+- `en/` – English source: index, water-mill, sun-mill, artefacts, laboratory, privacy, accessibility
+- `it/` – Italian source: index, mulino-ad-acqua, mulino-del-sole, reperti, laboratorio, privacy, accessibilita
 - `assets/img/` – all photos, drawings and funder logos (web-sized)
 - `assets/site.js` – before/after swipe sliders (input[data-ba] + [data-ba-pos])
 - Styles are inline on each element; shared CSS (menu, links) is in a <style> block in each page head.
@@ -23,7 +25,7 @@ Owner: Carlo Montesanti, Slow Life Family Farm, Noto (Sicily). Contact: info@mus
 
 ## Design system
 - Colours: black #0E0E0C, ink #14130F, bone #EDE8DC, light #F5F2EA, gold #C8A45C (deep gold #A8842F on light backgrounds), stone grey #A9A498, text on dark #D2CDC1, text on light #3B3932 / #5E5A50.
-- Fonts (Google Fonts): Cormorant Garamond for titles and names; Jost for body text and small capitals (letter-spacing 0.3–0.4em).
+- Fonts (self-hosted in assets/fonts, no Google Fonts for privacy): Cormorant Garamond for titles and names; Jost for body text and small capitals (letter-spacing 0.3–0.4em).
 - Gold used sparingly: one short rule under titles, the grain in the logo, key links.
 
 ## EU grant (PNRR M1C3, Measure 2, Investment 2.2 – CUP G87B22001070004)
@@ -37,8 +39,17 @@ Owner: Carlo Montesanti, Slow Life Family Farm, Noto (Sicily). Contact: info@mus
 - Confirm address spelling: Contrada Piano Milo (or Miro), Noto.
 - Replace the pizza photo (appears edited) with a real one.
 - Real names and stories for the artefacts (board of stones, grain cleaner).
-- Add a privacy/cookie page and an accessibility statement (Italian law).
-- Embed the film (YouTube short 3jM72FhLY-s, or the original file) instead of the cover that links out.
-- Set og:image to a full URL once the domain is known.
+- Privacy/cookie page and accessibility statement are online (en/privacy, en/accessibility, it/privacy, it/accessibilita). Have them checked by a consultant; add the VAT number (P.IVA) of the farm in the footer if required. Update them if cookies, analytics, forms or an embedded YouTube player are added.
+- Embed the film (YouTube short OwATUZKdR90, or the original file) instead of the cover that links out.
 - Get the funding section and the education-only wording approved by the grant office.
-- Choose domain and hosting (e.g. museumofagriculturalcivilization.org) and publish.
+
+## Domain and publishing (live since November 2026)
+- Italian site: https://www.museodellaciviltacontadina.com – hosted on a Hestia control panel (fibersix.it, server IP 103.230.140.4). Files go in web/museodellaciviltacontadina.com/public_html via the panel's File Manager ("Gestore File").
+- English site: https://www.museumofagriculturalcivilization.org – domain and hosting at Hostinger (hPanel). Files go in public_html via Websites > Dashboard > File Manager.
+- The build (`python3 tools/build.py`) makes `docs/` (Italian) and `build-en/` (English) with pages at the domain root (/, /mulino-ad-acqua.html, /water-mill.html …); the IT | EN switch and hreflang point across the two domains; each site gets its own sitemap.xml, robots.txt, 404.html and .htaccess.
+- The owner uploads by hand from his phone, so after a change send only the changed files of docs/ and build-en/ (clearly labelled Italian / English); send a full zip of each folder only when many files change.
+
+### After every change
+1. Edit en/ and it/ (both, always), then `python3 tools/build.py`.
+2. Commit the source and docs/ to this repo (branch + pull request).
+3. Send the owner the changed files for each host.
