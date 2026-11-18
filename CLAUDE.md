@@ -53,3 +53,8 @@ Owner: Carlo Montesanti, Slow Life Family Farm, Noto (Sicily). Contact: info@mus
 1. Edit en/ and it/ (both, always), then `python3 tools/build.py`.
 2. Commit the source and docs/ to this repo (branch + pull request).
 3. Send the owner the changed files for each host.
+
+### English site: one-line update from GitHub (preferred, no phone uploads)
+After pushing build-en/ to the branch, the owner pastes this in Hostinger's File Manager Terminal:
+cd ~ && curl -sL -o site.zip https://github.com/carlomontesanti1-cpu/Museum-/archive/refs/heads/domain-setup.zip && rm -rf site_tmp && unzip -q site.zip -d site_tmp && cp -a site_tmp/*/build-en/. ~/domains/museumofagriculturalcivilization.org/public_html/ && rm -rf site.zip site_tmp && ls -la ~/domains/museumofagriculturalcivilization.org/public_html/index.html
+(Change the branch name in the URL if the work moves to another branch, e.g. main after merging.)
